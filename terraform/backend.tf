@@ -1,11 +1,8 @@
 terraform {
   backend "s3" {
-    bucket = "aws_s3_bucket.mytf_bucket18-03.id"
+    bucket = "s3statebackend635"
     region = "us-east-1"
-    key = "eks/terraform.tfstate"
+    key = "global/mystatefile/terraform.tfstate"
+    encrypt = true
   }
-}
-
-resource "aws_s3_bucket" "mytf_bucket18-03" {
-  bucket = "terraform-backend-bucket18-03"
 }
